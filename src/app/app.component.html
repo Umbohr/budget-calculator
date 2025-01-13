@@ -15,7 +15,7 @@
       <div><input #montant type="text" inputmode="numeric" pattern="[0-9]*" [value]="montantDepenses()" (input)="montantDepenses.set(parseNumber(montant.value))">€</div>
     </div>
   </section>
-  <p>La personne aux revenus 1 doit verser <b class="p1">{{ result().x | number: '1.0-0'}}€</b> tandis que la personne au salaire 2 doit verser <b class="p2">{{ result().y | number: '1.0-0'}}€</b>.
+  <p>La personne aux revenus 1 doit verser <b class="p1">{{ result().x | number: '1.0-2'}}€</b> tandis que la personne au salaire 2 doit verser <b class="p2">{{ result().y | number: '1.0-2'}}€</b>.
   </p>
   @if (montantSalaire1() - result().x === montantSalaire2() - result().y) {
     <p>Il restera {{montantSalaire1() - result().x}}€ à chacun.</p>
