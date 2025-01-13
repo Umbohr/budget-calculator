@@ -1,6 +1,6 @@
 
 <main class="main">
-  <h1>Budget égalitaire</h1>
+  <h1>Budget (un peu plus) égalitaire</h1>
   <section>
     <div>
       <label class="p1" for="salaire1">Revenus personne 1:&nbsp;</label>
@@ -18,10 +18,10 @@
   <p>La personne aux revenus 1 doit verser <b class="p1">{{ result().x | number: '1.0-2'}}€</b> tandis que la personne au salaire 2 doit verser <b class="p2">{{ result().y | number: '1.0-2'}}€</b>.
   </p>
   @if (montantSalaire1() - result().x === montantSalaire2() - result().y) {
-    <p>Il restera {{montantSalaire1() - result().x}}€ à chacun.</p>
+    <p>Il restera {{montantSalaire1() - result().x | number: '1.0-2'}}€ à chacun.</p>
   } @else {
-    <p>Il restera {{montantSalaire1() - result().x}}€ à la personne 1.</p>
-    <p>Il restera {{montantSalaire2() - result().y}}€ à la personne 2.</p>
+    <p>Il restera {{montantSalaire1() - result().x | number: '1.0-2'}}€ à la personne 1.</p>
+    <p>Il restera {{montantSalaire2() - result().y | number: '1.0-2'}}€ à la personne 2.</p>
   }
 
 </main>

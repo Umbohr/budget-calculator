@@ -1,14 +1,18 @@
-import { DecimalPipe } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { DecimalPipe, registerLocaleData } from '@angular/common';
+import { Component, computed, LOCALE_ID, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { lusolve } from 'mathjs'
-
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule, DecimalPipe],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+  ]
 })
 export class AppComponent  {
   title = 'budget';
