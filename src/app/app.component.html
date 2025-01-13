@@ -1,0 +1,38 @@
+
+<main class="main">
+  <h1>Budget égalitaire</h1>
+  <section>
+    <div>
+      <label class="p1" for="salaire1">Revenus personne 1:&nbsp;</label>
+      <div><input #salaire1 type="text" inputmode="numeric" pattern="[0-9]*" [value]="montantSalaire1()" (input)="montantSalaire1.set(parseNumber(salaire1.value))">€</div>
+    </div>
+    <div>
+      <label class="p2"  for="salaire2" >Revenus personne 2:&nbsp;</label>
+      <div><input #salaire2 type="text" inputmode="numeric" pattern="[0-9]*" [value]="montantSalaire2()" (input)="montantSalaire2.set(parseNumber(salaire2.value))">€</div>
+    </div>
+    <div>
+      <label>Dépenses communes:&nbsp;</label>
+      <div><input #montant type="text" inputmode="numeric" pattern="[0-9]*" [value]="montantDepenses()" (input)="montantDepenses.set(parseNumber(montant.value))">€</div>
+    </div>
+  </section>
+  <p>La personne aux revenus 1 doit verser <b class="p1">{{ result().x | number: '1.0-0'}}€</b> tandis que la personne au salaire 2 doit verser <b class="p2">{{ result().y | number: '1.0-0'}}€</b>.
+  </p>
+  @if (montantSalaire1() - result().x === montantSalaire2() - result().y) {
+    <p>Il restera {{montantSalaire1() - result().x}}€ à chacun.</p>
+  } @else {
+    <p>Il restera {{montantSalaire1() - result().x}}€ à la personne 1.</p>
+    <p>Il restera {{montantSalaire2() - result().y}}€ à la personne 2.</p>
+  }
+
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

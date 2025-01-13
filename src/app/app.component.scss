@@ -1,0 +1,31 @@
+.p1 {
+  color: slateblue;
+}
+
+.p2 {
+  color: olivedrab;
+}
+
+input {
+  text-align: right;
+  width: 5rem;
+}
+
+label {
+  max-width: max-content;
+  text-align: left;
+}
+
+div {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: self-end;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  width: fit-content;
+  gap: 0.6rem;
+}
